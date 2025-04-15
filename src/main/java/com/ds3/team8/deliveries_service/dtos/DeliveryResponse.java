@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -12,8 +14,8 @@ import lombok.Setter;
 public class DeliveryResponse {
     private Long id;
     private String status;
-    private String routeDetails;
-    private Long dealerId;
+    private LocalDateTime deliveryDate;
+    private Long userId;
     private Long orderId;
     private Boolean isActive;
 

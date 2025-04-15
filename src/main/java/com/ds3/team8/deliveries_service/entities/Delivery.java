@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @Table(name = "deliveries")
@@ -21,12 +23,12 @@ public class Delivery {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;
 
-    @Column(name = "dealer_id", nullable = false)
-    private Long dealerId;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
     @Column(nullable = false)
     private String status;
 
-    @Column(name = "route_details")
-    private String routeDetails;
+    @Column(name = "delivery_date")
+    private LocalDateTime deliveryDate;
 }

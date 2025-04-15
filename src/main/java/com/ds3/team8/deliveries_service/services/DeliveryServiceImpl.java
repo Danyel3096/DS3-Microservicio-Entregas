@@ -26,8 +26,8 @@ public class DeliveryServiceImpl implements IDeliveryService {
     public DeliveryResponse save(DeliveryRequest request) {
         Delivery delivery = new Delivery();
         delivery.setStatus(request.getStatus());
-        delivery.setRouteDetails(request.getRouteDetails());
-        delivery.setDealerId(request.getDealerId());
+        delivery.setDeliveryDate(request.getDeliveryDate());
+        delivery.setUserId(request.getUserId());
         delivery.setOrderId(request.getOrderId());
         delivery.setIsActive(true);
 
@@ -51,8 +51,8 @@ public class DeliveryServiceImpl implements IDeliveryService {
                 .orElseThrow(() -> new DeliveryNotFoundException(id));
 
         delivery.setStatus(request.getStatus());
-        delivery.setRouteDetails(request.getRouteDetails());
-        delivery.setDealerId(request.getDealerId());
+        delivery.setDeliveryDate(request.getDeliveryDate());
+        delivery.setUserId(request.getUserId());
         delivery.setOrderId(request.getOrderId());
 
         Delivery updated = deliveryRepository.save(delivery);
@@ -87,8 +87,8 @@ public class DeliveryServiceImpl implements IDeliveryService {
         return new DeliveryResponse(
                 delivery.getId(),
                 delivery.getStatus(),
-                delivery.getRouteDetails(),
-                delivery.getDealerId(),
+                delivery.getDeliveryDate(),
+                delivery.getUserId(),
                 delivery.getOrderId(),
                 delivery.getIsActive()
         );

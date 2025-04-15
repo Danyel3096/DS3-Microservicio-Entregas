@@ -1,14 +1,13 @@
 package com.ds3.team8.deliveries_service.dtos;
 
-import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -19,13 +18,13 @@ public class DeliveryRequest {
     @Size(min = 2, max = 20, message = "El tamaño tiene que estar entre 2 y 20")
     private String status;
 
-    @Size(min = 2, max = 20, message = "El tamaño tiene que estar entre 2 y 20")
-    @NotEmpty(message = "No puede estar vacio")
-    private String routeDetails;
+    @NotNull(message = "La fecha de entrega no puede estar vacía")
+    @Future(message = "La fecha de entrega debe estar en el futuro")
+    private LocalDateTime deliveryDate;
 
     @NotNull(message = "El stock no puede ser nulo")
     @Min(value = 0, message = "El dealerId no puede ser negativo")
-    private Long dealerId;
+    private Long userId;
 
     @NotNull(message = "El stock no puede ser nulo")
     @Min(value = 0, message = "El orderId no puede ser negativo")
