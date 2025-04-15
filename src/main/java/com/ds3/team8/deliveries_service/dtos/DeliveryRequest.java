@@ -25,9 +25,9 @@ public class DeliveryRequest {
 
     @NotNull(message = "El stock no puede ser nulo")
     @Min(value = 0, message = "El dealerId no puede ser negativo")
-    private Integer dealerId;
+    private Long dealerId;
 
     @NotNull(message = "El stock no puede ser nulo")
     @Min(value = 0, message = "El orderId no puede ser negativo")
-    private Integer orderId;
+    private Long orderId;
 }

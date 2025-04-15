@@ -13,7 +13,8 @@ public class DeliveryResponse {
     private Long id;
     private String status;
     private String routeDetails;
-    private Integer dealerId;
-    private Integer orderId;
+    private Long dealerId;
+    private Long orderId;
+    private Boolean isActive;
 
 }

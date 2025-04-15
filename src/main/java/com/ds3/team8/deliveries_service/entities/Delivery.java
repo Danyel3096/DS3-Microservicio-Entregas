@@ -13,13 +13,16 @@ import lombok.NoArgsConstructor;
 public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "order_id", nullable = false)
-    private Integer orderId;
+    private Long orderId;
+
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive = true;
 
     @Column(name = "dealer_id", nullable = false)
-    private Integer dealerId;
+    private Long dealerId;
 
     @Column(nullable = false)
     private String status;
