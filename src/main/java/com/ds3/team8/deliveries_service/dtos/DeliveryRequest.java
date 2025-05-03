@@ -1,5 +1,6 @@
 package com.ds3.team8.deliveries_service.dtos;
 
+import com.ds3.team8.deliveries_service.entities.DeliveryStatus;
 import jakarta.validation.constraints.*;
 
 import lombok.Getter;
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 public class DeliveryRequest {
     @NotEmpty(message = "No puede estar vacio")
     @Size(min = 2, max = 20, message = "El tamaño tiene que estar entre 2 y 20")
-    private String status;
+    private DeliveryStatus status;
 
     @NotNull(message = "La fecha de entrega no puede estar vacía")
     @Future(message = "La fecha de entrega debe estar en el futuro")

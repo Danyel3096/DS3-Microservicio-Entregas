@@ -26,8 +26,9 @@ public class Delivery {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String status;
+    private DeliveryStatus status;
 
     @Column(name = "delivery_date")
     private LocalDateTime deliveryDate;

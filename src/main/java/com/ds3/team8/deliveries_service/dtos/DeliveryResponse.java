@@ -1,5 +1,6 @@
 package com.ds3.team8.deliveries_service.dtos;
 
+import com.ds3.team8.deliveries_service.entities.DeliveryStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class DeliveryResponse {
     private Long id;
-    private String status;
+    private DeliveryStatus status;
     private LocalDateTime deliveryDate;
     private Long userId;
     private Long orderId;
